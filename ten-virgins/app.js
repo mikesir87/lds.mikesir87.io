@@ -55,14 +55,18 @@ function App({ wise, onReset }) {
     return (
         <Container>
             <Row>
-                <Col xs={6}>
-                    <Image src="https://media.giphy.com/media/l9o9zrJUPAcVO/giphy.gif" fluid  style={{ opacity: imageOpacity }} />
-                </Col>
-                <Col xs={4}>
+                <Col xs={11}>
                     <ProgressBar now={progress} variant={progressVariant} />
-                    { wise && (
-                        <Button onClick={() => setProgress(Math.min(progress + 30, 100))}>Refill</Button>
-                    )}
+                </Col>
+                { wise && (
+                    <Col xs={1}>
+                        <Button variant="outline-light" onClick={() => setProgress(Math.min(progress + 30, 100))}>Refill</Button>
+                    </Col>
+                )}
+            </Row>
+            <Row>
+                <Col xs={12} className="text-center">
+                    <Image src="https://media.giphy.com/media/l9o9zrJUPAcVO/giphy.gif" fluid  style={{ opacity: imageOpacity }} />
                 </Col>
             </Row>
         </Container>
