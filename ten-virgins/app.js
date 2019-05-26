@@ -55,12 +55,12 @@ function App({ wise, onReset }) {
     return (
         <Container>
             <Row>
-                <Col xs={11}>
+                <Col xs={10}>
                     <ProgressBar now={progress} variant={progressVariant} />
                 </Col>
                 { wise && (
-                    <Col xs={1}>
-                        <Button variant="outline-light" onClick={() => setProgress(Math.min(progress + 30, 100))}>Refill</Button>
+                    <Col xs={2}>
+                        <Button size="sm" variant="outline-light" onClick={() => setProgress(Math.min(progress + 30, 100))}>Refill</Button>
                     </Col>
                 )}
             </Row>
