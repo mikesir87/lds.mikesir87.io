@@ -7,15 +7,20 @@ function Bootstrap() {
         return (
             <Container>
                 <Row>
-                    <Col xs={12} className="text-center">
+                    <Col xs={{ span: 4, offset: 4 }} className="text-center">
                         <h3>Who would you like to be?</h3>
-                        <Button variant="primary" size="lg" onClick={() => setSmartness(true)}>
-                            Wise Virgin
-                        </Button>
-                        &nbsp; &nbsp;
-                        <Button variant="danger" size="lg" onClick={() => setSmartness(false)}>
-                            Not Wise Virgin
-                        </Button>
+
+                        <div style={{marginBottom: "30px"}}>
+                            <Button variant="primary" size="lg" onClick={() => setSmartness(true)}>
+                                Wise Virgin
+                            </Button>
+                            &nbsp; &nbsp;
+                            <Button variant="danger" size="lg" onClick={() => setSmartness(false)}>
+                                Not Wise Virgin
+                            </Button>
+                        </div>
+
+                        <p>As a wise virgin, you will be able to add oil to your lamp. So, choose wisely!</p>
                     </Col>
                 </Row>
             </Container>
@@ -60,7 +65,7 @@ function App({ wise, onReset }) {
                 </Col>
                 { wise && (
                     <Col xs={3}>
-                        <Button size="sm" variant="outline-light" onClick={() => setProgress(Math.min(progress + 30, 100))}>Refill</Button>
+                        <Button size="sm" variant="outline-light" onClick={() => setProgress(Math.min(progress + 30, 100))}>Add Oil</Button>
                     </Col>
                 )}
             </Row>
